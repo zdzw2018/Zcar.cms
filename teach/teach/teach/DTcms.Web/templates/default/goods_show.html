@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%set (string){category_title}=get_category_title({model.category_id},"商品展示")%>
+<title>{model.title} - {category_title} - {config.webname}</title>
+<link rel="stylesheet" href="{config.webpath}scripts/ui/skins/Aqua/css/ligerui-all.css" />
+<link rel="stylesheet" href="{config.templateskin}/css/style.css" />
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery.jqzoom.js"></script>
+<script type="text/javascript" src="{config.webpath}scripts/ui/js/ligerBuild.min.js"></script>
+<script type="text/javascript" src="{config.templateskin}/js/base.js"></script>
+<script type="text/javascript" src="{config.templateskin}/js/picture.js"></script>
+<script type="text/javascript" src="{config.templateskin}/js/digg_ajax.js"></script>
+<script type="text/javascript">
+	$(function(){
+		bindDigg('{config.webpath}', 'photo', '{model.id}');
+	});
+</script>
+</head>
+<body>
+<div class="container_12">
+ <!-- .header -->
+ <%template src=/_header.html/%>
+ <!-- /.header -->
+ <div class="clear"></div>
+ <div class="grid_8">
+  <%set (string){category_nav}=get_category_menu("goods_list1", model.category_id)%>
+  <h2 class="page_title_view"><a href="<%linkurl("goods_list","")%>">商品展示</a>{category_nav}</h2>
+  <h2 class="page_news_title">{model.title}</h2>
+  <!--幻灯片开始-->
+  <div class="pictureDIV">
+    <div id="preview" class="spec-preview">
+      <span class="jqzoom"><img /></span>
+    </div>
+    <!--缩图开始-->
+    <div class="spec-scroll">
+      <a class="prev">&lt;</a>
+      <a class="next">&gt;</a>
+      <div class="items">
+        <ul>
+          <%if model.photo_albums!=null%>
+          <%loop (DTcms.Model.photo_album) modelt1 model.photo_albums%>
+          <li><img bimg="{modelt1.big_img}" src="{modelt1.small_img}" onmousemove="preview(this);" /></li>
+          <%/loop%>
+          <%/if%>
+        </ul>
+      </div>
+    </div>
+    <!--缩图结束-->
+  </div>
+  <!--幻灯片结束-->
+  <ul class="productItem">
+    <li>所属类别：{model.title}</li>
+    <li>商品价格：￥{model.sell_price}元</li>
+    <!--扩展属性开始-->
+    <%if model.photo_attribute_values!=null%>
+    <%loop (DTcms.Model.photo_attribute_value) modelt2 model.photo_attribute_values%>
+    <li>{modelt2.title}：{modelt2.content}</li>
+    <%/loop%>
+    <%/if%>
+    <!--扩展属性结束-->
+    <li>浏览次数：{model.click}</li>
+    <li>发布时间：{model.add_time}</li>
+  </ul>
+  <div class="clear"></div>
+  <!-- ===== 自由编辑内容 ===== -->
+  <div class="page_content">
+    {model.content}
+  </div>
+  <div class="line10"></div>
+  <!--分享-->
+  <%template src=/_share_js.html/%>
+  <!--/分享-->
+  <div class="line10"></div>
+  <!--顶踩-->
+  <%template src=/_digg_box.html/%>
+  <!--/项踩-->
+  <h3>推荐产品</h3>
+  <ul class="other_news_list">
+   <%set (DataTable){photo_list5}=get_photo_list(channel_id, model.category_id, 5, "is_lock=0 and is_red=1")%>
+   <%loop pdr5 photo_list5%>
+   <li><a  target="_blank"href="<%linkurl("goods_show",{pdr5[id]})%>"><%cutstring({pdr5[title]},82)%></a><span>( <%datetostr({pdr5[add_time]},yyyy-MM-dd)%> )</span></li>
+   <%/loop%>
+  </ul>
+  <!--评论-->
+  <%if model.is_msg==1%>
+  <%template src=/_comment_box.html/%>
+  <input type="hidden" id="turl" value="<%linkurl("goods_show",{model.id})%>" />
+  <%/if%>
+  <!--/评论-->
+ </div>
+ <!-- end content -->
+ <div class="grid_4 sidebar">
+  <!--类别-->
+   <ul class="sidebar_nav">
+    <%set (DataTable){category_list}=get_category_list(channel_id, 0)%>
+    <%loop cdr category_list%>
+    <li>
+      <%csharp%>
+      int layer_width=(Convert.ToInt32(cdr["class_layer"])-1)*18;
+      <%/csharp%>
+      <span style="width:{layer_width}px;text-align:right;display:inline-block;"></span>
+      <a href="<%linkurl("goods_list1",{cdr[id]},1)%>">{cdr[title]}</a></li>
+    <%/loop%>
+  </ul>
+  <!--/类别-->
+  <h2><a href="<%linkurl("goods_list","")%>">商品排行榜</a></h2>
+  <div class="hot_list">
+     <ul>
+       <%set (DataTable){photo_list10}=get_photo_list(channel_id, model.category_id, 10, "is_lock=0", "digg_good desc,add_time desc")%>
+       <%loop pdr10 photo_list10%>
+       <%if pdr10__loop__id==1%>
+       <li class="first">
+         <b><a href="<%linkurl("goods_show",{pdr10[id]})%>">{pdr10[title]}</a></b>
+         <p><%cutstring({pdr10[content]},80)%></p>
+       </li>
+       <%continue%>
+       <%/if%>
+       <li><span>( <%datetostr({pdr10[add_time]},MM-dd)%> )</span><a href="<%linkurl("goods_show",{pdr10[id]})%>"><%cutstring({pdr10[title]},28)%></a></li>
+       <%/loop%>
+     </ul>
+   </div>
+  
+ </div>
+ <!-- end sidebar -->
+ <!-- .footer -->
+ <%template src=/_footer.html/%>
+ <!-- /.footer -->
+</div>
+</body>
+</html>

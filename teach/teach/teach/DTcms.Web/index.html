@@ -1,0 +1,1052 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="telephone=no" name="format-detection" />
+
+<link rel="stylesheet" type="text/css" href="http://m.300.cn/m_styles/common.css">
+<link rel="stylesheet" type="text/css" href="http://m.300.cn/m_styles/pageIndex.css">
+<link rel="stylesheet" type="text/css" href="http://m.300.cn/styles/custom.css">
+<script type="text/javascript">
+    function getCookieObj() {
+        var ary = document.cookie.split(/;\s?/), cookieObj = {};
+        for (var i = 0, n = ary.length; i < n; i++) {
+            var t = ary[i].split('=');
+            if (t.length == 2) cookieObj[t[0]] = t[1];
+        }
+        return cookieObj;
+    }
+    (function () {
+        var defaultImgMode = window.localStorage.getItem('browseMode');
+        if (defaultImgMode && defaultImgMode != 'close') {
+            var imgMode = getCookieObj().imgDispMode;
+            alert(imgMode);
+            if (imgMode == 'pq') {
+                document.write('<link id="hdLink" rel="stylesheet" type="text/css" href="../styles/common_hd480.css">');
+            } else if (imgMode == 'gq') {
+                document.write('<link id="hdLink" rel="stylesheet" type="text/css" href="../styles/common_hd640.css">');
+            } else if (!imgMode) {
+                if (defaultImgMode == 'gq') {
+                    var dpr = window.devicePixelRatio;
+                    if (dpr > 1.5) {
+                        document.write('<link id="hdLink" rel="stylesheet" type="text/css" href="../styles/common_hd640.css">');
+                    } else {
+                        document.write('<link id="hdLink" rel="stylesheet" type="text/css" href="../styles/common_hd480.css">');
+                    }
+                }
+            }
+        }
+    })()
+
+    var CompInit = function () {
+        var initFuncs = {};
+        var requireJsAry = [];
+        return {
+            addCompInit: function (key, opts) {
+                if (opts.initFunc) {
+                    initFuncs[key] = opts.initFunc;
+                }
+                if (opts.requireJs) {
+                    requireJsAry.push(opts.requireJs);
+                }
+            },
+            initAll: function (fn) {
+                fn({ requireJsAry: requireJsAry, initFuncs: initFuncs })
+            }
+        }
+    } ()
+</script>
+
+
+
+
+
+<link rel="apple-touch-icon" href="http://m.300.cn/images/icon.png"/>
+
+
+	<title>中企动力</title>
+
+
+<script src="http://m.300.cn/scripts/common/mobile_zh_CN.js"></script>
+<title>首页</title>
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+</head>
+<body>
+<div id="box_root" class = "pageIndex">
+	<div id="box_mainBody">
+		<div id="box_main" >
+			<header id="box_header">
+				<div class="columnSpace" id="elem-PublicConfig_showLogo01-001" name="LOGO"> 
+				
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+    CompInit.addCompInit('PublicConfig_showLogo01-001', {
+        requireJs: '/publicScripts/logo/PublicConfig_showLogo01.js',
+        initFunc: function () {
+            var options = {
+                clientAddress: "http://m.300.cn/DownloadsClient",
+                china: "",
+                english: "",
+                hanyu: "",
+                fanti: "",
+                riyu: "",
+                eyu: "",
+                fayu: "",
+                xibanyayu: "",
+                putaoyayu: "",
+                deyu: "",
+                languageList: []
+            }
+            PublicConfig_showLogo01.init(options);
+        }
+    })
+
+// ]]>
+</script>
+
+
+<!-- 头部 -->
+<section class="PublicConfig_showLogo01-d1_c1" style="display:none;">
+<!-- 样式1 leftAndRight-->
+
+	<div class="showStyle1 whiteIcon grayIcon">
+		<!-- logo -->
+		<div class="active logoWrap">
+			<img src="http://m.300.cn/imageRepository/f20b58e9-72b1-44ac-b000-92b4740ed4f2.png" />
+		</div>
+		
+		<div class="toolWrap">
+			<span class="line"></span>
+			<!-- 搜索 -->
+			<span class="toolItem active search" id="searchmoney" name="openT">
+				<a href="javascript:void(0)"></a>
+			</span>
+			<!-- 客户端下载 -->
+			
+				<span class="line"></span>
+				<!-- span class="toolItem active weibo" name="openT" onclick="openToolbar('t',this)"><a href="weibo.html?weiboId="></a></span><span href="javascript:void(0)" class="line"></span-->
+				<span class="toolItem active download" name="openT" style="position: relative"> 
+					<a href="javascript:void(0)"></a>
+				</span>
+			
+			
+			<!-- 语言切换 -->
+			
+			
+			<!-- 浏览模式切换 -->
+			<!--<span id="hdLine" class="line"></span>
+			<span class="toolItem active hdmodeBtn"></span>
+			<span id="hdBtnTop" class="toolItem active hdmodeBtn"> 
+				<span class="z3g-changeBtn hd">HD</span>
+				<span class="z3g-changeBtn fluency"><img src="../m_images/z3g_fluency_icon.png" /></span>
+			</span>
+
+			--><div class="clea-both"></div>
+		</div>
+	</div>
+
+
+<!-- 样式2 middle-->
+
+<!-- 样式3 slide-->
+
+<!-- 样式4 concise-->
+
+<div class="clea-both"></div>
+
+	<div class="downloadDragList" id="download" style="display: none;">
+		<ul>
+			<li class="android">
+				<span class="contL"> <em class="name">Android</em> <em
+					class="info">最新版本:V1.02</em>
+				</span>
+				<span id="downloadAndroid" class="active contR"> <em
+					class="icon"><i class="icon01"></i><i class="icon02"></i><i class="icon03"></i></em> <em class="text">下载
+				</em> </span>
+			</li>
+			<!--  li class="iphone">
+									<span class="contL">
+										<em class="name">Iphone<img alt="" src="../m_images/z3g_mark01.gif" /></em>
+										<em class="info">最新版本：1.0.35</em>
+									</span>
+									<span class="active contR">
+										<em class="icon"></em>
+										<em class="text">下载</em>
+									</span>
+								</li-->
+		</ul>
+	</div>
+	
+	
+		
+		
+			<div class="langDragList" id="langurage" style="display: none">
+		
+	
+		<ul id="languageListHTML">
+		</ul>
+	</div>
+
+
+
+</section> 
+				</div>
+				<div class="columnSpace" id="elem-Columns_navigation01-001" name="栏目导航"> 
+				<script type="text/javascript">
+				    var browseMode = 'lc';
+				    localStorage["browseMode"] = browseMode;	
+</script>
+<div id="Columns_navigation01-001" class="Columns_navigation01-d1">	
+		<nav class="Columns_navigation01-d1_c2" >
+			<div class="navBarL active" id="columnprev">				
+				<span ><em></em></span>
+			</div>
+			<div class="navBody" id="singleScroll">
+				<ul class="sc_scroller" id="singleScrollUl" style="width:10000px">
+						<li><span class="active js_columngoto" data-id="column1978" data-url="/index.html">首　页</span></li>
+						<li><span class="active js_columngoto" data-id="column1979" data-url="/introduction/&amp;contentId=170.html">产　品</span></li>
+						<li><span class="active js_columngoto" data-id="column1984" data-url="/introduction/&amp;contentId=178.html">服务与支持</span></li>
+						<li><span class="active js_columngoto" data-id="column1989" data-url="/news_list/&amp;newsCategoryId=62&amp;InfoListColumnID=2.html">公司新闻</span></li>
+				</ul>
+			</div>
+			<div class="navBarR active" id="columnnext">
+				<span ><em></em></span>
+			</div>
+		</nav>
+</div>
+<script type="text/javascript">
+	CompInit.addCompInit('Columns_navigation01',{
+	    requireJs:'/publicScripts/columns/Columns_navigation01.js' ,
+	    initFunc:function(){ 
+	      var options={	    	
+	    	showset : 'single-line',
+	      }
+	      Columns_navigation01.init(options);
+	    }
+	})
+</script> 
+				</div>
+			</header>
+
+			<div id="box_content">
+<div class="columnSpace" id="elem-FrontSlide_listJson01-001" name="广告">
+<script type="text/javascript">
+    CompInit.addCompInit('FrontSlide_listJson01-001', {
+        requireJs: '/publicScripts/slide/FrontSlide_listJson01.js',
+        initFunc: function () {
+            var options = {
+                jsonData: { "contents": [{ "linkUrl": "/introduction/&contentId=181.html", "smallPicPath": "http://m.300.cn/imageRepository/393af89d-e631-4c0c-a389-15ad4b034f99.jpg", "bigPicPath": "http://m.300.cn/imageRepository/lc_320_300/393af89d-e631-4c0c-a389-15ad4b034f99.jpg" }, { "linkUrl": "/introduction/&contentId=168.html", "smallPicPath": "http://m.300.cn/imageRepository/82bf460c-2a57-4e28-bc76-2aef94e5ae01.jpg", "bigPicPath": "http://m.300.cn/imageRepository/lc_320_300/82bf460c-2a57-4e28-bc76-2aef94e5ae01.jpg" }, { "linkUrl": "/introduction/&contentId=170.html", "smallPicPath": "http://m.300.cn/imageRepository/011771ef-61d0-4931-83ec-d8190150f27a.jpg", "bigPicPath": "http://m.300.cn/imageRepository/lc_320_300/011771ef-61d0-4931-83ec-d8190150f27a.jpg"}], "setData": { "descriPtion": "640*600", "changeStyle": 5, "slideName": "综合门户型"} }
+            }
+            FrontSlide_listJson01.init(options);
+            $('.FrontSlide_listJson01-d1_c1 img').each(function () {
+                $(this).attr('src', $(this).attr('src').replace(/\/lc.*?\//, '/'))
+            });
+        }
+    })
+</script>
+<div id="FrontSlide_listJson01-001" class="null">
+<div class="FrontSlide_listJson01-d1_c1" >
+	<div class="bannerScrollWrap" >
+		<div class="leftCover"></div>
+		<div id="bannerScroll">
+		  <div class="prev"><span id="prev" class="active"></span></div>
+		  <ul class="bannerList sc_scroller">
+			<li>
+					<div class="imageurl_advice" name="/introduction/&contentId=181.html" ><img lazy-src= "http://m.300.cn/imageRepository/lc_320_300/393af89d-e631-4c0c-a389-15ad4b034f99.jpg" /></div>
+			</li>
+			<li>
+					<div class="imageurl_advice" name="/introduction/&contentId=168.html" ><img lazy-src= "http://m.300.cn/imageRepository/lc_320_300/82bf460c-2a57-4e28-bc76-2aef94e5ae01.jpg" /></div>
+			</li>
+			<li>
+					<div class="imageurl_advice" name="/introduction/&contentId=170.html" ><img lazy-src= "http://m.300.cn/imageRepository/lc_320_300/011771ef-61d0-4931-83ec-d8190150f27a.jpg" /></div>
+			</li>
+		  </ul>
+		  <div class="next"><span id="next" class="active"></span></div>
+		</div>
+		<div class="rightCover"></div>
+	</div>
+	<div id="bannerNav" class="sc_nav"> 
+		<span id="indicator"> 
+		 </span> 
+	 </div>
+</div>
+</div>
+</div>
+<!--<div class="columnSpace" id="elem-Icon_Columns_navigation01-001" name="图标导航">
+<script type="text/javascript">
+	CompInit.addCompInit('Icon_Columns_navigation01',{
+	    requireJs:'/publicScripts/iconcolumn/Icon_Columns_navigation01.js' ,
+	    initFunc:function(){ 
+	      var options={	        
+	      }
+	      Icon_Columns_navigation01.init(options);
+	    }
+	})
+</script>
+<div id="Icon_Columns_navigation01-001" class="Icon_Columns_navigation01-d1">
+	<nav class="Icon_Columns_navigation01-d1_c1">
+		<div class="iconNavigationStyle02">
+			<ul class="column04">
+					<li class="active js_columnjump" data-id="column1978" data-url="/index.html">
+						<div class="imgWrap">
+							<div class="imgWrap02 z3g-bgColor05_2">
+								<img src="http://m.300.cn/imageRepository/lc_54_54/yz_about.png">
+							</div>
+						</div>
+							<h3 class="iconTitle z3g-textColor05">首　页</h3>
+					</li>	
+					<li class="active js_columnjump" data-id="column1979" data-url="/introduction/&amp;contentId=170.html">
+						<div class="imgWrap">
+							<div class="imgWrap02 z3g-bgColor05_2">
+								<img src="http://m.300.cn/imageRepository/lc_54_54/yz_product.png">
+							</div>
+						</div>
+							<h3 class="iconTitle z3g-textColor05">产　品</h3>
+					</li>	
+					<li class="active js_columnjump" data-id="column1984" data-url="/introduction/&amp;contentId=178.html">
+						<div class="imgWrap">
+							<div class="imgWrap02 z3g-bgColor05_2">
+								<img src="http://m.300.cn/imageRepository/lc_54_54/yz_map.png">
+							</div>
+						</div>
+							<h3 class="iconTitle z3g-textColor05">服务与支持</h3>
+					</li>	
+					<li class="active js_columnjump" data-id="column1989" data-url="/news_list/&amp;newsCategoryId=62&amp;InfoListColumnID=2.html">
+						<div class="imgWrap">
+							<div class="imgWrap02 z3g-bgColor05_2">
+								<img src="">
+							</div>
+						</div>
+							<h3 class="iconTitle z3g-textColor05">公司新闻</h3>
+					</li>	
+			</ul>			
+		</div>
+	</nav>
+</div>
+</div>-->
+<div class="columnSpace" id="elem-ComContent_detail01-001" name="页面内容">
+<div id="ComContent_detail01-001" class="ComContent_detail01-d1_c1">
+					<section class="ComContent_detail01-d1_c1">
+						<div class="borderTitle active js_gotoNew" >
+							<span class="left">
+								<em class="icon"></em>
+								<em class="borderName">
+  										客户服务
+								</em>
+							</span>
+							<span class="right">
+								<em class="moreCont"></em>
+								<em class="active controlBar">
+									<cite class="icon"></cite>
+								</em>
+							</span>
+						</div>
+						<div class="borderCont js_gotoNew" >
+							<div class="contWrap htmledit">
+											<div class="imgWrap" id="contentImgDiv">
+												<img lazy-src= "http://m.300.cn/imageRepository/f5523be2-b23f-45ba-bbfe-fcfa2f25889d.jpg" /> 
+											</div>
+									超过150个行业的经验积累，为不同需求的客户提供个性化解决方案；国际顶级高性能防火墙，5星级IDC部署集群保障您的网站安全；全国80个地区和城市5000位信息化专家
+							</div>
+						</div>
+					</section>
+</div>
+<script type="text/javascript">
+    CompInit.addCompInit('ComContent_detail01', {
+        requireJs: '/publicScripts/comContent/ComContent_detail01.js',
+        initFunc: function () {
+            var options = {
+                id: 183
+            }
+            ComContent_detail01.init(options);
+        }
+    })
+</script>
+</div>
+<div class="columnSpace" id="elem-Products_mobileShowCase01-001" name="产品列表">
+<section class="Products_mobileShowCase01-d1_c1" id="mobileShowCase-Products_mobileShowCase01-001">
+	<div class="borderTitle z3g-bgColor03">
+		<ul class="titleWrap" id="mobile_tabs_change-Products_mobileShowCase01-001">
+			<li class="active z3g-column1">
+				<div>
+					<span class="text ">推荐产品</span>
+					<span class="number"></span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="borderCont" id="mobilelist01-Products_mobileShowCase01-001" style="display:block">
+	<div class="showcaseWrap ">
+		<div class="ItemWrap Products_mobilelist01-d1_c1" >
+				<ul>
+			<li class="active ">
+				<div class="productatag" data-phref="/products_detail/&amp;productId=159&amp;productColumnId=1&amp;orderStr=9&amp;pmcId=156&amp;pmcType=2.html" data-otherlink="0" alt="">
+					<div class="imgWrap"><img lazy-src= "http://m.300.cn/imageRepository/lc_80_80/df479761-bd96-44c7-8cd4-2513dc4ae7d3.jpg" /></div>
+					<div class="infoWrap">
+						<h3 class="productTitle">
+							<span class="">ZtouchS触享官网 </span>
+							<cite class="markWrap">
+							</cite>
+						</h3>
+						<p class="cont  ">ZtouchS是新一代触享型企业官方网站，在为您提供功能齐全的传统官网的同时，还为您提供配套的手机官网、手机客户端、意向客户管理平台和可视化运营监控终端，帮助您随时随地展示产品、处理业务、管理网站。手</p>
+					</div>
+				</div>
+			</li>
+			<li class="active ">
+				<div class="productatag" data-phref="/products_detail/&amp;productId=166&amp;productColumnId=1&amp;orderStr=9&amp;pmcId=156&amp;pmcType=2.html" data-otherlink="0" alt="">
+					<div class="imgWrap"><img lazy-src= "http://m.300.cn/imageRepository/lc_80_80/1ffc04b6-1e52-49e1-8a5a-3c5599e31950.jpg" /></div>
+					<div class="infoWrap">
+						<h3 class="productTitle">
+							<span class="">Zmobile手机客户端 </span>
+							<cite class="markWrap">
+							</cite>
+						</h3>
+						<p class="cont  ">Zmobile提供专属手机客户端 与客户零距离接触生成桌面图标，抢占入口Zmobile提供手机网站客户端安装包，在用户手机桌面生成企业图标，仅需一次点击就能进入到企业客户端。 定制化欢迎页，强化企业品</p>
+					</div>
+				</div>
+			</li>
+			<li class="active ">
+				<div class="productatag" data-phref="/products_detail/&amp;productId=161&amp;productColumnId=1&amp;orderStr=9&amp;pmcId=156&amp;pmcType=2.html" data-otherlink="0" alt="">
+					<div class="imgWrap"><img lazy-src= "http://m.300.cn/imageRepository/lc_80_80/33d2d88a-4945-4ec5-86db-06698b13ba3b.jpg" /></div>
+					<div class="infoWrap">
+						<h3 class="productTitle">
+							<span class="">Zshop独立网上商城 </span>
+							<cite class="markWrap">
+							</cite>
+						</h3>
+						<p class="cont  ">为中小企业量身打造的独立网上商城，专属于自己的网上商城系统，简单易用、高效智能的管理，让你轻松开展在线零售。拥有独立的网上商城系统，塑造强力的品牌，我的商城我做主！科学的网店构架科学合理、符合顾客网络</p>
+					</div>
+				</div>
+			</li>
+			<li class="active ">
+				<div class="productatag" data-phref="/products_detail/&amp;productId=162&amp;productColumnId=1&amp;orderStr=9&amp;pmcId=156&amp;pmcType=2.html" data-otherlink="0" alt="">
+					<div class="imgWrap"><img lazy-src= "http://m.300.cn/imageRepository/lc_80_80/f3de6e04-66c0-4f84-811f-c85a58edbc16.jpg" /></div>
+					<div class="infoWrap">
+						<h3 class="productTitle">
+							<span class="">Z邮局 </span>
+							<cite class="markWrap">
+							</cite>
+						</h3>
+						<p class="cont  ">企业级通讯管理工具。除收发邮件的基本功能外，企业邮局以企业域名作为后缀，不仅体现公司的企业形象，方便管理层对员工邮箱进行内部管理，保障客户资料及企业内部的信息安全稳定，还能使商业信函获得更好的服务保障</p>
+					</div>
+				</div>
+			</li>
+			<li class="active ">
+				<div class="productatag" data-phref="/products_detail/&amp;productId=163&amp;productColumnId=1&amp;orderStr=9&amp;pmcId=156&amp;pmcType=2.html" data-otherlink="0" alt="">
+					<div class="imgWrap"><img lazy-src= "http://m.300.cn/imageRepository/lc_80_80/1210a0e8-86b8-4a31-b3e1-ec8d733bea8f.jpg" /></div>
+					<div class="infoWrap">
+						<h3 class="productTitle">
+							<span class="">Google关键词广告 </span>
+							<cite class="markWrap">
+							</cite>
+						</h3>
+						<p class="cont  ">Google AdWords关键字广告是Google推出的基于每次有效点击付费的网上广告计划，可以让主动寻找您的产品和服务的客户找到您，适用于希望通过互联网推广和拓展业务的大小企业。 网站推广—Goo</p>
+					</div>
+				</div>
+			</li>
+			<li class="active ">
+				<div class="productatag" data-phref="/products_detail/&amp;productId=167&amp;productColumnId=1&amp;orderStr=9&amp;pmcId=156&amp;pmcType=2.html" data-otherlink="0" alt="">
+					<div class="imgWrap"><img lazy-src= "http://m.300.cn/imageRepository/lc_80_80/602d4d1c-69c7-4458-bb25-f5d0c076ed16.jpg" /></div>
+					<div class="infoWrap">
+						<h3 class="productTitle">
+							<span class="">域名 </span>
+							<cite class="markWrap">
+							</cite>
+						</h3>
+						<p class="cont  ">域名 —你的互联网地盘，你做主。保护稀有资源，保护企业品牌什么是域名？域名是企业开展电子商务必不可少的要素，企业没有域名，就像房子没有门牌号码，在互联网中没有人可以找到你，也就难以建立起良好的企业形象。企业注册自己的域名，既可以保护企业的无形资产，又能树立起良好的企业形象。 域名的优势实现网络资源利用最大化，帮助您迅速树立企业形象，提升企业在行业中的影响力实现网络营销计划的第一步，帮助您打造响亮的网络品牌，扩大企业知名度快速的业务处理加上优质的服务，帮助您有效地保护网络品牌和企业权益提供全面的域名注册、管理服务，我们为您想得更多 域名注册价格英文域名  .com/ .net价格：150元/年 .cn/.com.cn/.net.cn价格：120元/年 .cc价格：400元/年中文域名 .中国 / .cn价格：320元/年  </p>
+					</div>
+				</div>
+			</li>
+				</ul>
+		</div>
+	</div>
+	</div>
+</section>
+<script type="text/javascript">
+    CompInit.addCompInit('Products_mobileShowCase01-001', {
+        requireJs: '/publicScripts/products/Products_mobileShowCase01.js',
+        initFunc: function () {
+            var options = {
+                showcasestyle: false,
+                showcaseitem: 'ul',
+                showcasecompId: 'Products_mobileShowCase01-001'
+            }
+            Products_mobileShowCase01.init(options);
+        }
+    });
+</script>
+</div>
+<div class="columnSpace" id="elem-Specifies_show01-001" name="说明页">
+<script type="text/javascript">
+    CompInit.addCompInit('Specifies_show01', {
+        requireJs: '/publicScripts/specifies/Specifies_show01.js',
+        initFunc: function () {
+            var options = {
+                imgUrlArray: [{ "url": "http://m.300.cn/imageRepository/6741b75d-3823-40a6-b2d2-bc4ec5af9809.jpg"}], serverName: "m.300.cn"
+            }
+            Specifies_show01.init(options);
+        }
+    })
+</script>
+<div id="Specifies_show01-001" class="Specifies_show01-d1_c1">
+	<section class="Specifies_show01-d1_c1">
+			<div class="borderTitle">
+			  <span class="left"> <em class="icon"></em> <em class="borderName">
+				     	公司介绍
+				     </em> </span>
+			  <span class="right"> <em class="moreCont"></em> <em class="active controlBar"> <cite class="icon"></cite> </em> </span>
+			</div>
+		<div class="htmledit">
+			<p> <a href="/introduction/&amp;contentId=181.html"><img alt="" lazy-src="http://m.300.cn/imageRepository/6741b75d-3823-40a6-b2d2-bc4ec5af9809.jpg" style="width: 119px; float: left; height: 166px; margin-right: 5px;" /></a>中企动力科技股份有限公司成立于1999年，是香港联合交易所上市公司中国数码信息有限公司旗下的一家大型股份制高新技术企业。自成立以来，中企动力科技股份有限公司始终...【<a href="/introduction/&amp;contentId=181.html">更多</a>】</p>
+		</div>
+	</section>
+</div>
+</div>
+<!--<div class="columnSpace" id="elem-ProductsCategory_show02-001" name="产品分类">
+<div id="ProductsCategory_show02-001" class="null">
+			<section class="ProductsCategory_show02-d1_c1">
+				<div class="borderTitle z3g-bgColor03 js_linkCategoryListIndex" data-pmcid="1" data-pmccolumid="1">
+					<span class="left">
+						<em class="icon"></em>
+						<em class="borderName ">产品分类</em>
+					</span>
+					<span class="right">
+						<em class="moreCont"></em>
+						<em class="active controlBar">
+							<cite class="icon"></cite>
+						</em>
+					</span>
+				</div>
+				<div class="borderCont">
+					<ul>
+						<li class="active  js_linkCategoryList" data-pmcid="157" data-pmccolumid="1" >
+								<div class="active imgWrap js_linkCategoryList"  data-pmcid="157" data-pmccolumid="1" >
+								    <img lazy-src= "http://m.300.cn/imageRepository/lc_66_66/50e9a0fc-5e99-4519-a1b5-e2982aace354.png" onerror= "this.src='http://m.300.cn/imageRepository/lc_66_66/z3g_noPic.PNG'" /> 
+								</div>
+								<div class="infoWrap" >
+									<h3 class="active productCategoryTitle  js_linkCategoryList" data-pmcid="157" data-pmccolumid="1" >
+										企业网站
+									</h3>
+									<p class="categoryCont">
+									</p>
+								</div>
+								<div class="active arrowBarWrap js_linkCategoryList"   data-pmcid="157" data-pmccolumid="1" ></div>
+						</li>
+						<li class="active  js_linkCategoryList" data-pmcid="158" data-pmccolumid="1" >
+								<div class="active imgWrap js_linkCategoryList"  data-pmcid="158" data-pmccolumid="1" >
+								    <img lazy-src= "http://m.300.cn/imageRepository/lc_66_66/147c732b-a53c-4b7e-9825-641b3fa19074.png" onerror= "this.src='http://m.300.cn/imageRepository/lc_66_66/z3g_noPic.PNG'" /> 
+								</div>
+								<div class="infoWrap" >
+									<h3 class="active productCategoryTitle  js_linkCategoryList" data-pmcid="158" data-pmccolumid="1" >
+										网上商城
+									</h3>
+									<p class="categoryCont">
+									</p>
+								</div>
+								<div class="active arrowBarWrap js_linkCategoryList"   data-pmcid="158" data-pmccolumid="1" ></div>
+						</li>
+						<li class="active  js_linkCategoryList" data-pmcid="159" data-pmccolumid="1" >
+								<div class="active imgWrap js_linkCategoryList"  data-pmcid="159" data-pmccolumid="1" >
+								    <img lazy-src= "http://m.300.cn/imageRepository/lc_66_66/362eb57c-3ce1-4003-ba80-6df03fac7395.png" onerror= "this.src='http://m.300.cn/imageRepository/lc_66_66/z3g_noPic.PNG'" /> 
+								</div>
+								<div class="infoWrap" >
+									<h3 class="active productCategoryTitle  js_linkCategoryList" data-pmcid="159" data-pmccolumid="1" >
+										数字通讯
+									</h3>
+									<p class="categoryCont">
+									</p>
+								</div>
+								<div class="active arrowBarWrap js_linkCategoryList"   data-pmcid="159" data-pmccolumid="1" ></div>
+						</li>
+						<li class="active  js_linkCategoryList" data-pmcid="160" data-pmccolumid="1" >
+								<div class="active imgWrap js_linkCategoryList"  data-pmcid="160" data-pmccolumid="1" >
+								    <img lazy-src= "http://m.300.cn/imageRepository/lc_66_66/796ee965-1b0a-414c-9937-de25c651bc9a.png" onerror= "this.src='http://m.300.cn/imageRepository/lc_66_66/z3g_noPic.PNG'" /> 
+								</div>
+								<div class="infoWrap" >
+									<h3 class="active productCategoryTitle  js_linkCategoryList" data-pmcid="160" data-pmccolumid="1" >
+										网络推广
+									</h3>
+									<p class="categoryCont">
+									</p>
+								</div>
+								<div class="active arrowBarWrap js_linkCategoryList"   data-pmcid="160" data-pmccolumid="1" ></div>
+						</li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+				CompInit.addCompInit('ProductsCategory_show02',{
+				    requireJs:'/publicScripts/products/ProductsCategory_show02.js' ,
+				    initFunc:function(){
+					  var options={
+					    //组件所需参数,可通过JSTL传入
+					  }
+					  ProductsCategory_show02.init(options);
+				  }
+				  })
+				</script>
+			</section>			
+</div>
+</div>-->
+<!--<div class="columnSpace" id="elem-News_homelist01-001" name="资讯列表">
+<section class="News_homelist01-d1_c1">
+		<div class="listStyle01">
+			<div class="borderTitle">
+				<ul class="titleWrap">
+							<li class="active z3g-column1">
+								<div>
+									<span class="text">公司新闻</span>
+									<span class="number"></span>
+								</div>
+							</li>
+				</ul>
+			</div>
+			<div class="borderCont">
+				<ul id="infoNewList" style="display:none">
+						<div class="z3g-noContent">
+							<span>
+								暂无内容
+							</span>
+						</div>
+				</ul>
+				<ul id="infoCate1List" style="display:none">
+						<li class="active">
+								<div data-id="143" class="js_gotoNewsDetail">
+									<h3 class="newsTitle">
+										<em class="icon"></em>
+										<span class="name">抢夺移动互联客户 中小企业APP网站可速成</span>
+									</h3>
+								</div>
+						</li>
+						<li class="active">
+								<div data-id="142" class="js_gotoNewsDetail">
+									<h3 class="newsTitle">
+										<em class="icon"></em>
+										<span class="name">中小企业：如何打好移动互联的关键战役</span>
+									</h3>
+								</div>
+						</li>
+						<li class="active">
+								<div data-id="141" class="js_gotoNewsDetail">
+									<h3 class="newsTitle">
+										<em class="icon"></em>
+										<span class="name">4G时代将临中小企业智破移动营销障碍</span>
+									</h3>
+								</div>
+						</li>
+						<li class="active">
+								<div data-id="140" class="js_gotoNewsDetail">
+									<h3 class="newsTitle">
+										<em class="icon"></em>
+										<span class="name">中小企业移动互联网安家工程从冰城起航</span>
+									</h3>
+								</div>
+						</li>
+						<li class="active">
+								<div data-id="139" class="js_gotoNewsDetail">
+									<h3 class="newsTitle">
+										<em class="icon"></em>
+										<span class="name">[媒体报道]钱经：陈丹“9”的无限可能</span>
+									</h3>
+								</div>
+						</li>
+						<li class="active">
+								<div data-id="138" class="js_gotoNewsDetail">
+									<h3 class="newsTitle">
+										<em class="icon"></em>
+										<span class="name">[媒体报道]CCTV新闻专访技术总经理张斌《云计算：像用电一样享受信息》</span>
+									</h3>
+								</div>
+						</li>
+						<li class="active">
+								<div data-id="137" class="js_gotoNewsDetail">
+									<h3 class="newsTitle">
+										<em class="icon"></em>
+										<span class="name">[动力新闻]中企动力发布Ztouch触享官网</span>
+									</h3>
+								</div>
+						</li>
+						<li class="active">
+								<div data-id="136" class="js_gotoNewsDetail">
+									<h3 class="newsTitle">
+										<em class="icon"></em>
+										<span class="name">[媒体报道] 中国电子报—陈鸣飞：中小企业“触电”要有自主阵地</span>
+									</h3>
+								</div>
+						</li>
+				</ul>
+				<ul  id="infoCate2List" style="display:none">
+						<div class="z3g-noContent">
+							<span>
+								暂无内容
+							</span>
+						</div>
+				</ul>
+				<ul  id="infoCate3List" style="display:none">
+						<div class="z3g-noContent">
+							<span>
+								暂无内容
+							</span>
+						</div>
+				</ul>
+			</div>
+		</div>
+</section>
+<script type="text/javascript">
+	CompInit.addCompInit('News_homelist01-001',{
+        requireJs:'/publicScripts/news/News_homelist01.js' ,
+        initFunc:function(){ 
+          var options={
+            looknew : 'false',
+        	catesize : '1',
+        	categoryId : '',
+        	InfoListColumnID : '2',
+			InfoListDisplayStyle : 'plane',
+			catevoList : '[com.sitechasia.ebiz.info.vo.InfoCategoryVO@4762f4df]'
+          }
+          News_homelist01.init(options);
+        }
+    })
+</script>
+</div>-->
+<!--<div class="columnSpace" id="elem-NewsCategory_columns01-001" name="资讯分类">
+<section class="NewsCategory_columns01-d1_c1">
+		<div class="borderTitle active js_jumpToNewsList" data-columnid="2">
+			<span class="left">
+				<em class="icon"></em>
+					<em class="borderName">资讯分类</em>
+			</span>
+			<span class="right">
+				<em class="moreCont"></em>
+				<em class="active controlBar">
+					<cite class="icon"></cite>
+				</em>
+			</span>
+		</div>
+	<div class="borderCont">
+		<ul>
+    					<li class="z3g-column2">
+					<span class="js_gotoNewsList" data-id="62" data-advertid="0">
+						<em class="active">公司新闻</em>
+					</span>
+		</ul>
+	</div>
+</section>
+<script>
+	CompInit.addCompInit('NewsCategory_columns01-001',{
+        requireJs:'/publicScripts/news/NewsCategory_columns01.js' ,
+        initFunc:function(){ 
+          	NewsCategory_columns01.init();
+        }
+    })
+</script>
+</div>-->
+<div id="elem-PublicConfig_showBottom01-001" name="bottom">
+
+
+
+
+
+
+	<section class="PublicConfig_showBottom01-d1_c1">
+	<div class="htmledit">
+		<div style="text-align: center;"> COPYRIGHT &copy; 2010-2013<br /> 中企动力科技股份有限公司<br /> 版权所有 &nbsp; 京IPC证 010249号</div> <script type="text/javascript">		                                                                                                                          var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-30222393-1']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
+	</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="columnSpace" id="elem-Public_totalSearch01-001" name="搜索">
+<div id="Public_totalSearch01-001" class="Public_totalSearch01-d1_c1">
+	<input type="hidden" id="fromfirstHTml" value="8">
+	<input type="hidden" id="selectcontent" value="">
+	<input type="hidden" id="selectTypeId" value="1">
+	<!-- 滑动栏 -->
+	<!-- z3g-search-c1-start -->
+	<section class="Public_totalSearch01-d1_c1">
+	<div class="z3g-alertWindow" id="searchweighing">
+	<div class="searchTab">
+		<div class="searchTabScroll" id="firstUL">
+			<ul>
+								<li class="active js_selecttype"
+									data-pagenum="1"
+									value="1 ">
+									<span>产品 </span>
+								</li>
+								<li class="active js_selecttype"
+									data-pagenum="2"
+									value="2 ">
+									<span>资讯 </span>
+								</li>
+			</ul>
+			<span class="del active" id="backToFromHtml" ></span>
+		</div>
+	</div>
+	<div class="searchInput z3g-noTouchMoveWrap">
+				<input type="hidden" name="type" id="type" value="1">
+		<input type="hidden" name="action_page" id="action_page"
+			value="" />
+		<span class="inputWrap"><input type="text" class="z3g-input js_checkvalue"
+				value="" 
+				id="keywords" name="keywords"
+				placeholder="请输入关键字">
+		</span>
+		<button class="z3g-button active" type="button" id="searchValue">
+			搜索
+		</button>
+	</div>
+		<div class="moreWrap active" id="newsmoreId" style="display: none;">
+			查看更多
+		</div>
+		<div class="moreWrap active j-productlist-more" id="searchproductmoreId" style="display: none;">
+					<span>显示更多 </span>
+		</div>
+		<div class="moreWrap active j-productlist-more loading"
+							style="display: none;">
+					<span>正在更新...
+					</span>
+		</div>
+		<div class="z3g-noResult" value="1" id="infosmileface" style="display:none">
+					<div class="icon"></div>
+					<p>
+						对不起
+						,
+						没有找到相关资讯
+						<br />
+						请输入更准确的关键词再搜索
+					</p>
+		</div>
+		<div class="z3g-noResult" value="1" id="productsmileface" style="display:none">
+					<div class="icon"></div>
+					<p>
+						对不起
+						,
+						没有找到相关产品
+						</br>
+						请输入更准确的关键词再搜索
+					</p>
+		</div>
+		<input type="hidden" id="productsviewType">
+	<!-- 咨询 产品内容显示-->
+	<div class="searchResult" id="js_searchResult">
+	</div>
+	</div>
+	</section>
+</div>
+<script type="text/javascript">
+    CompInit.addCompInit('public_search', {
+        requireJs: '/publicScripts/publicsearch/public_search.js',
+        initFunc: function () {
+            var options = { prevCount: "8", detailUrl: "", newsKeyword: "", categoryId: "", inputkeyword: "请输入关键字" }
+            public_search.init(options);
+        }
+    })
+</script>
+</div>
+</div>
+</div>
+</div>
+<footer id="box_footerBody">
+		<div class="columnSpace" id="elem-Toolbar_show01-001" name="下方工具条"> 
+		
+
+
+
+<script type="text/javascript">
+    CompInit.addCompInit('Toolbar_show01-001', {
+        requireJs: '/publicScripts/toolbar/Toolbar_show01.js',
+        initFunc: function () {
+            var options = {
+                email: "service4006@300.cn",
+                productId: "",
+                newsId: "",
+                toolbarStyle: "pp",
+                mobile: "400-0101-365",
+                toolbarsize: "5"
+            }
+            Toolbar_show01.init(options);
+        }
+    })
+    if (/zmios/.test(navigator.userAgent)) {
+        (function () {
+            var tmp = document.getElementById('box_footerBody');
+            if (tmp) {
+                tmp.id = 'box_footerBody_ios';
+                tmp.style.display = 'none';
+            }
+        })()
+    }
+</script>
+<div id="Toolbar_show01-001" class="Toolbar_show01-d1_c1">
+
+	
+		<div class="footerToolStyle1 whiteIcon grayIcon">
+			<ul class="footerWrap">
+				
+					
+						
+							<li class="active">
+								<div id="yptel">
+									<span class="icon tel"></span>
+									<span class="text">电话</span>
+								</div>
+							</li>
+						
+						
+						
+						
+						
+						
+						
+						
+					
+				
+					
+						
+						
+							<li class="active">
+								<div id="email">
+									<span class="icon email"></span>
+									<span class="text">邮件</span>
+								</div>
+							</li>
+						
+						
+						
+						
+						
+						
+						
+					
+				
+					
+						
+						
+						
+						 
+							<li class="active">
+								<div id="map">
+									<span class="icon map"></span>
+									<span class="text">地图</span>
+								</div>
+							</li>
+						 	
+						
+						
+						
+						
+						
+						
+					
+				
+					
+						
+						
+						
+						
+						
+							<li class="active">
+								<div id="share">
+									<span class="icon share"></span>
+									<span class="text">分享</span>
+								</div>
+							</li>
+						
+						
+						
+						
+					
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+							<li class="active">
+								<div id="message">
+									<span class="icon message"></span>
+									<span class="text">留言</span>
+								</div>
+							</li>
+						
+					
+				
+			</ul>
+			<div class="toolMoreWrap" id="toolMoreWrap" style="display:none">
+				<div class="whiteIcon grayIcon">
+	   				<ul class="contWrap">
+	     				
+					</ul>
+					<div class="contArrow">
+	  					<em></em>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+	
+	
+	
+</div>
+ 
+		</div>
+	</footer>
+<div class="columnSpace" id="elem-ClientDownLoadTs_ajaxIsopents01-001" name="客户端提示下载">
+<div id="ClientDownLoadTs_ajaxIsopents01-001" class="ClientDownLoadTs_ajaxIsopents01-d1_c1">
+	<section class="ClientDownLoadTs_ajaxIsopents01-d1_c1">
+	<div class="z3g-alertWindow" style="display: none" id="iphonetype">
+		<div class="z3g-iphoneStart">
+			<span class="contWrap">请点击此处<em class="icon"></em>，选择 <em
+				class="z3g-textRed">添加到屏幕</em> 
+				从主屏幕启动本应用。
+			</span>
+			<div class="contArrow">
+				<em>◆</em>
+			</div>
+		</div>
+	</div>
+	<div class="z3g-alertWindow" style="display: none" id="androidtype">
+		<div class="z3g-androidStart">
+			<div class="active install"><span class="icon"></span>立即体验客户端</div>
+			<div class="later">稍后再说>></div>
+		</div>
+	</div>
+	</section>
+</div>
+<script type="text/javascript">
+    CompInit.addCompInit('ClientDownLoadTs_ajaxIsopents01', {
+        requireJs: '/publicScripts/clientDownLoadTs/ClientDownLoadTs_ajaxIsopents01.js',
+        initFunc: function () {
+            var options = {
+                clientAddress: "http://m.300.cn/DownloadsClient",
+                ists: "1"
+            }
+            ClientDownLoadTs_ajaxIsopents01.init(options);
+        }
+    })
+</script>
+</div>
+</div>
+
+<script type="text/javascript" src="/publicScripts/lib.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿  <%set (int){comment_count}=get_comment_count({channel_id}, {model.id}, "is_lock=0")%><!--取得评论总数-->
+  <link type="text/css" rel="stylesheet" href="{config.webpath}css/pagination.css" />
+  <script type="text/javascript" src="{config.webpath}scripts/jquery/jquery.form.js"></script>
+  <script type="text/javascript" src="{config.webpath}scripts/jquery/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="{config.webpath}scripts/jquery/messages_cn.js"></script>
+  <script type="text/javascript" src="{config.webpath}scripts/jquery/jquery.pagination.js"></script>
+  <script type="text/javascript">
+    $(function(){
+	  //初始化评论列表
+	  AjaxPageList('#comment_list', '#pagination', 10, {comment_count}, '{config.webpath}tools/submit_ajax.ashx?action=comment_list&channel_id={model.channel_id}&content_id={model.id}');
+	  //初始化发表评论表单
+      AjaxOnSubmit('comment_form', 'btnSubmit', '{config.webpath}tools/submit_ajax.ashx?action=comment_add&channel_id={model.channel_id}&content_id={model.id}');
+	});
+  </script>
+  <div class="comment_box">
+    <h3><span><a href="#Add" class="blulink">已有{comment_count}条评论，点击发表评论</a></span>最新评论</h3>
+    <div class="comment_list">
+      <ul id="comment_list">暂无评论，快来抢沙发吧！</ul>
+    </div>
+    <div id="pagination" class="flickr"></div><!--放置页码-->
+    <h3 class="add">发表评论<a name="Add" id="Add"></a></h3>
+    <form id="comment_form" name="comment_form">
+    <div class="comment_add">
+      <input type="hidden" id="txtTitle" name="txtTitle" value="{model.title}" />
+      <textarea id="txtContent" name="txtContent" class="text required"></textarea>
+      <div class="btns">
+        <input id="btnSubmit" name="btnSubmit" type="submit" value="发表评论" class="submit" />
+        <span>验证码：</span>
+        <input id="txtCode" name="txtCode" type="text" class="text required" style="width:80px;" />
+        <a href="javascript:;" onclick="ToggleCode(this, '{config.webpath}tools/verify_code.ashx');return false;"><img src="{config.webpath}tools/verify_code.ashx" width="80" height="22" /> 看不清楚？</a>
+      </div>
+    </div>
+    </form>
+  </div>

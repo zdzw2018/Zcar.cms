@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{config.webtitle}</title>
+<link rel="stylesheet" href="{config.templateskin}/css/style.css" />
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="{config.templateskin}/js/base.js"></script>
+</head>
+<body>
+<div class="container_12">
+ <!-- .header -->
+ <%template src=/_header.html/%>
+ <!-- /.header -->
+ <div class="clear"></div>
+ <div class="grid_12">
+  <div class="banner"><img src="{config.templateskin}/images/banner.jpg" width="940" height="150" alt="dtcms" /></div>
+ </div>
+ <!-- end banner -->
+ <div class="clear"></div>
+ <div class="grid_8">
+  <div class="grid_4 alpha">
+   <div class="list_box">
+    <h2><a href="<%linkurl("article_list","")%>">最新资讯</a></h2>
+    <div class="hot_news">
+      <%set (DataTable){article_list1}=get_article_list(1, 0, 1, "is_lock=0 and is_top=1")%>
+      <%loop adr1 article_list1%>
+      <a href="<%linkurl("article_show",{adr1[id]})%>" class="hot_news_img"><img src="{adr1[img_url]}" width="260" alt="{adr1[title]}" /></a>
+      <a href="<%linkurl("article_show",{adr1[id]})%>">{adr1[title]}</a><span>( <%datetostr({adr1[add_time]},yyyy-MM-dd)%> )</span>
+      <p><%cutstring({adr1[zhaiyao]},120)%></p>
+      <%/loop%>
+    </div>
+    <ul class="news_list">
+	 <%set (DataTable){article_list5}=get_article_list(1, 0, 5, "is_lock=0")%>
+     <%loop adr5 article_list5%>
+     <li><span>( <%datetostr({adr5[add_time]},MM-dd)%> )</span><a href="<%linkurl("article_show",{adr5[id]})%>"><%cutstring({adr5[title]},28)%></a></li>
+     <%/loop%>
+    </ul>
+   </div>
+   <div class="list_box clearfix">
+    <h2><a href="<%linkurl("photo_list","")%>">图片分享</a></h2>
+    <ul class="index_img_list">
+     <%set (DataTable){photo_list6}=get_photo_list(2, 0, 6, "is_lock=0")%>
+     <%loop pdr6 photo_list6%>
+     <li><a href="<%linkurl("photo_show",{pdr6[id]})%>"><img src="{pdr6[img_url]}" width="125" height="125" alt="{pdr6[title]}" /><span>{pdr6[title]}</span></a></li>
+     <%/loop%>
+    </ul>
+    <div class="clear"></div>
+   </div>
+  </div>
+  <div class="grid_4 omega">
+   <div class="list_box hot">
+    <h2><a href="<%linkurl("down_list","")%>">热门资源</a></h2>
+    <%set (DataTable){down_list1}=get_download_list(3, 0, 1, "is_lock=0 and is_red=1")%>
+    <%loop ddr1 down_list1%>
+    <div class="hot_down clearfix">
+      <a href="<%linkurl("down_show",{ddr1[id]})%>" title="{ddr1[title]}"><img src="{ddr1[img_url]}" width="75" height="75" /></a>
+      <b><a href="<%linkurl("down_show",{ddr1[id]})%>" title="{ddr1[title]}"><%cutstring({ddr1[title]},18)%></a></b>
+      <p><%cutstring({ddr1[content]},68)%></p>
+    </div>
+     <%/loop%>
+    <ul class="news_list">
+     <%set (DataTable){down_list16}=get_download_list(3, 0, 6, "is_lock=0")%>
+     <%loop ddr16 down_list16%>
+     <li><span>( <%datetostr({ddr16[add_time]},MM-dd)%> )</span><a href="<%linkurl("down_show",{ddr16[id]})%>"><%cutstring({ddr16[title]},26)%></a></li>
+     <%/loop%>
+    </ul>
+   </div>
+   <div class="list_box">
+    <h2><a href="<%linkurl("down_list","")%>">图标素材</a></h2>
+    <ul class="news_list">
+     <%set (DataTable){down_list28}=get_download_list(3, 21, 8, "is_lock=0")%>
+     <%loop ddr28 down_list28%>
+     <li><span>( <%datetostr({ddr28[add_time]},MM-dd)%> )</span><a href="<%linkurl("down_show",{ddr28[id]})%>"><%cutstring({ddr28[title]},26)%></a></li>
+     <%/loop%>
+    </ul>
+   </div>
+   <div class="list_box">
+    <h2><a href="<%linkurl("down_list","")%>">JQuery应用</a></h2>
+    <ul class="news_list">
+     <%set (DataTable){down_list38}=get_download_list(3, 26, 8, "is_lock=0")%>
+     <%loop ddr38 down_list38%>
+     <li><span>( <%datetostr({ddr38[add_time]},MM-dd)%> )</span><a href="<%linkurl("down_show",{ddr38[id]})%>"><%cutstring({ddr38[title]},26)%></a></li>
+     <%/loop%>
+    </ul>
+   </div>
+  </div>
+ </div>
+ <!-- end content -->
+ <div class="grid_4 sidebar">
+   <h2><a href="<%linkurl("goods_list","")%>">商品排行榜</a></h2>
+   <div class="hot_list">
+     <ul>
+       <%set (DataTable){photo_list10}=get_photo_list(5, 0, 10, "is_lock=0 and is_red=1")%>
+       <%loop pdr10 photo_list10%>
+       <%if pdr10__loop__id==1%>
+       <li class="first">
+         <b><a href="<%linkurl("goods_show",{pdr10[id]})%>">{pdr10[title]}</a></b>
+         <p><%cutstring({pdr10[content]},80)%></p>
+       </li>
+       <%continue%>
+       <%/if%>
+       <li><span>( <%datetostr({pdr10[add_time]},MM-dd)%> )</span><a href="<%linkurl("goods_show",{pdr10[id]})%>"><%cutstring({pdr10[title]},28)%></a></li>
+       <%/loop%>
+     </ul>
+   </div>
+   <div class="sidebar_ad"><a href="http://www.dtcms.net" target="_blank"><img src="{config.templateskin}/images/sidebar_ad.jpg" width="300" height="232" alt="dtcms" /></a></div>
+   <div class="sidebar">
+    <h2><a href="<%linkurl("feedback","")%>">最新留言</a></h2>
+    <ul class="news_list">
+     <%set (DataTable){feedback_list}=get_plugin_method("DTcms.Web.Plugin.Feedback", "feedback", "get_feedback_list", 4, "is_lock=0")%>
+     <%loop fdr feedback_list%>
+     <li><span>( <%datetostr({fdr[add_time]},MM-dd)%> )</span><a target="_blank" href="<%linkurl("feedback","")%>"><b>{fdr[user_name]}：</b><%cutstring({fdr[title]},26)%></a></li>
+     <%/loop%>
+    </ul>
+   </div>
+   <div class="sidebar">
+    <h2><a href="<%linkurl("link","")%>">友情链接</a></h2>
+    <div class="sidebar_link">
+      <ul class="txt">
+        <%set (DataTable){link_list1}=get_plugin_method("DTcms.Web.Plugin.Link", "link", "get_link_list", 6, "is_lock=0 and is_image=0 and is_red=1")%>
+        <%loop ldr1 link_list1%>
+        <li><a target="_blank" href="{ldr1[site_url]}">{ldr1[title]}</a></li>
+        <%/loop%>
+        <div class="clear"></div>
+      </ul>
+      <ul class="img">
+        <%set (DataTable){link_list2}=get_plugin_method("DTcms.Web.Plugin.Link", "link", "get_link_list", 6, "is_lock=0 and is_image=1 and is_red=1")%>
+        <%loop ldr2 link_list2%>
+        <li><a target="_blank" href="{ldr2[site_url]}" title="{ldr2[title]}"><img src="{ldr2[img_url]}" width="88" height="31" /></a></li>
+        <%/loop%>
+        <div class="clear"></div>
+      </ul>
+    </div>
+  </div>
+ </div>
+ <!-- end sidebar -->
+ <!-- .footer -->
+ <%template src=/_footer.html/%>
+ <!-- /.footer -->
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+    function show() {
+        var result = document.getElementByIdx("name").value;
+        location.href = "index2.htm?name=" + result;
+    }
+</SCRIPT>
+<style>
+.input7 {color: #999;width:145px;height:20px;border: 1px solid #CCCCCC; font-size:12px;background-color: #fff;}
+</style>
+</HEAD>
+<BODY>
+<input type="text" id="name" class="input7">
+<input type="button" value="OK" onclick="show()"/>
+</BODY>
+</HTML>

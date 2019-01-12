@@ -1,0 +1,22 @@
+﻿ <div class="grid_4">
+   <h1><a href="{config.weburl}">DTcms v1.0</a></h1>
+ </div>
+ <div class="search">
+   <input id="keywords" name="keywords" type="text" class="search_text" value="输入关健字" onfocus="javascript:if(this.value=='输入关健字')this.value='';" onblur="javascript:if(this.value=='')this.value='输入关健字'" />
+   <input type="button" value="搜索" class="search_button" onclick="SiteSearch('{config.webpath}search.aspx', '#keywords');" />
+ </div>
+ <!-- .nav -->
+ <div class="clear"></div>
+ <div class="nav">
+  <ul>
+   <li><a href="<%linkurl("index","")%>">首 页</a></li>
+   <li><a href="<%linkurl("article_list","")%>">新闻资讯</a></li>
+   <li><a href="<%linkurl("goods_list","")%>">商品展示</a></li>
+   <li><a href="<%linkurl("photo_list","")%>">图片分享</a></li>
+   <li><a href="<%linkurl("down_list","")%>">资源下载</a></li>
+   <li><a href="<%linkurl("feedback","")%>">在线留言</a></li>
+   <li><a href="<%linkurl("content","about")%>">关于我们</a></li>
+   <li><a href="<%linkurl("content","contact")%>">联系我们</a></li>
+  </ul>
+ </div>
+ <!-- /.nav -->

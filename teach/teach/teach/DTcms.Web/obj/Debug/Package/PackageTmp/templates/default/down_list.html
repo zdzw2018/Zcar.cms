@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%set (string){category_title}=get_category_title(category_id,"资源下载")%>
+<title>{category_title} - {config.webname}</title>
+<link rel="stylesheet" href="{config.templateskin}/css/style.css" />
+<link rel="stylesheet" href="{config.webpath}css/pagination.css" />
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="{config.templateskin}/js/base.js"></script>
+</head>
+<body>
+<div class="container_12">
+ <!-- .header -->
+ <%template src=/_header.html/%>
+ <!-- /.header -->
+ <div class="clear"></div>
+ <div class="grid_8">
+  <%set (string){category_nav}=get_category_menu("down_list1", category_id)%>
+  <h2 class="page_title">资源下载{category_nav}</h2>
+  <ul class="page_download_list">
+    <%set (DataTable){list}=get_download_list(channel_id, category_id, 8, page, "", out totalcount)%> <!--取得一个DataTable-->
+    <%set (string){pagelist}=get_page_link(8, page, totalcount, "down_list1", category_id, "__id__")%> <!--取得分页页码列表-->
+    <%loop dr list%>
+    <li><a href="<%linkurl("down_show",{dr[id]})%>" class="img_in_list"><img src="{dr[img_url]}" alt="{dr[title]}" width="150" height="150" /></a><a href="<%linkurl("down_show",{dr[id]})%>">{dr[title]}</a><i>{dr[add_time]}<span>{dr[click]} 人气</span></i>
+    <p><%cutstring({dr[content]},255)%></p>
+    </li>
+    <%/loop%>
+  </ul>
+  <div class="line10"></div>
+  <div class="flickr">{pagelist}</div> <!--放置页码列表-->
+  <div class="line10"></div>
+ </div>
+ <!-- end content -->
+ <div class="grid_4 sidebar">
+   <!--类别-->
+   <ul class="sidebar_nav">
+    <%set (DataTable){category_list}=get_category_list(channel_id, 0)%>
+    <%loop cdr category_list%>
+    <li>
+      <%csharp%>
+      int layer_width=(Convert.ToInt32(cdr["class_layer"])-1)*18;
+      <%/csharp%>
+      <span style="width:{layer_width}px;text-align:right;display:inline-block;"></span>
+      <a href="<%linkurl("down_list1",{cdr[id]},1)%>">{cdr[title]}</a></li>
+    <%/loop%>
+   </ul>
+   <!--/类别-->
+
+   <h2><a href="<%linkurl("down_list","")%>">推荐资源</a></h2>
+   <ul class="news_list">
+   <%set (DataTable){down_list1}=get_download_list(channel_id, category_id, 8, "is_lock=0 and is_red=1")%>
+   <%loop ddr down_list1%>
+   <li><span>( <%datetostr({ddr[add_time]},MM-dd)%> )</span><a href="<%linkurl("down_show",{ddr[id]})%>"><%cutstring({ddr[title]},32)%></a></li>
+   <%/loop%>
+  </ul>
+  
+ </div>
+ <!-- end sidebar -->
+ <!-- .footer -->
+ <%template src=/_footer.html/%>
+ <!-- /.footer -->
+</div>
+</body>
+</html>
